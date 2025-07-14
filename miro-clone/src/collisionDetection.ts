@@ -5,7 +5,7 @@ export const customCollisionDetection = (cards: Card[]): CollisionDetection => (
   const { active, droppableContainers } = args;
 
   const tray = droppableContainers.find((container) => container.id === 'tray');
-  if (tray && active.rect.current.translated) {
+  if (tray && active.rect.current.translated && tray.rect.current) {
     const trayRect = tray.rect.current;
     if (
       active.rect.current.translated.left < trayRect.right &&
